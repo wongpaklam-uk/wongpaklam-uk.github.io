@@ -1,2 +1,10 @@
-/* Bundled screenshot manifest: the GitHub screenshot sync replaces this with downloaded original Apple images. */
-Object.assign(BERLIN_LOCAL_SCREENSHOTS,{});
+/* Actual Apple App Store screenshots, unmodified. */
+Object.assign(BERLIN_LOCAL_SCREENSHOTS, {
+  "metronome": {
+    "iphone": [],
+    "ipad": [
+      "assets/screenshots/metronome/ipad-01.jpg",
+      "assets/screenshots/metronome/ipad-02.jpg"
+    ]
+  }
+});
