@@ -6,6 +6,7 @@ on:
     paths:
       - 'index.html'
       - 'scripts/import_appstore.py'
+      - 'scripts/extract_downhill_frames.py'
       - '.github/workflows/sync_appstore.yml'
   schedule:
     - cron: '20 5 1 * *'
@@ -23,12 +24,14 @@ jobs:
         run: python -m pip install --disable-pip-version-check 'Pillow>=11,<13'
       - name: Download original App Store images
         run: python scripts/import_appstore.py
+      - name: Extract original DownhillSpotter demonstration frames
+        run: python scripts/extract_downhill_frames.py
       - name: Commit original images
         run: |
           git add assets/screenshots assets/appstore-images.js
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'Sync original App Store screenshots [skip ci]'
+            git commit -m 'Archive genuine App Store images and review video frames [skip ci]'
             git push
           fi
