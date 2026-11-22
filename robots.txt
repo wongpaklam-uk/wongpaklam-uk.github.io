@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://wongpaklam-uk.github.io/sitemap.xml
